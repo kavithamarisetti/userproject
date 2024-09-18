@@ -23,16 +23,16 @@ from education.views import EducationView
 from django.conf import settings
 from django.conf.urls.static import static
 from user.views import PartnerPreferenceDetailsAPIView,UserModelAPIView,SixPhotoAPIView,IdProofAPIView,DocumentAddressAPIView,CompatibilityMatchAPIView,ReviewSectionAPIView,ProfileCompletesAPIView,HabitsView,HobbiesView
-'''from rest_framework_simplejwt.views import (
+from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
-)'''
+)
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    #path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('basicinfo/',BasicInforView.as_view()),
     path('basicinfo/<int:pk>/',BasicInforView.as_view()),
     path('contactus/',ContactView.as_view()),
